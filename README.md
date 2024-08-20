@@ -1,6 +1,6 @@
 
 # 🌟 WARP+ 24 PB Key Generator
-Deployed at: [chocolatecandyman.github.io/WARP](https://chocolatecandyman.github.io/WARP/)
+Deployed at: [Chocolatecandyman.warp](https://warp.chocolatecandyman.workers.dev/)
 
 ## Show Support for This Project to keep it alive!
 
