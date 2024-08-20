@@ -1,5 +1,5 @@
 
-# 🌟 WARP+ 24 PB Key 
+# 🌟 WARP+ 1 billion GB Key 
 - NOTE : Do not abuse the system by generating more than 2 keys in 1 day and do not try to act smart. I see everything. If you try to flood the system by generating excess keys you will be blacklisted from using this link forever.
   
 
