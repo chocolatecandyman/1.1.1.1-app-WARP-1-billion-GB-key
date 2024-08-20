@@ -1,16 +1,229 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>warp</title>
-</head>
-<body>
+const keys = [
+  "9ER32tM7-4vgDO703-GJ624Hk3",
+  "5t7jA38Z-3Z6Rr28y-4D8Bq6p3",
+  "Fdb521S8-2Q6w0tz9-W9c7V65S",
+];
 
-    <h1>My warp</h1>
-    
-    <!-- Embed the Gist using the provided script -->
-    <script src="https://gist.github.com/chocolatecandyman/4ee696e4ac376390910d41e03203a942.js"></script>
+const headers = {
+  'CF-Client-Version': 'a-6.11-2223',
+  'Host': 'api.cloudflareclient.com',
+  'Connection': 'Keep-Alive',
+  'Accept-Encoding': 'gzip',
+  'User-Agent': 'okhttp/3.12.1',
+};
 
-</body>
-</html>
+async function getKey() {
+  const r1 = await fetch('https://api.cloudflareclient.com/v0a2223/reg', {
+    method: 'POST',
+    headers,
+  });
+  const json1 = await r1.json();
+  const id = json1.id;
+  const license = json1.account.license;
+  const token = json1.token;
+
+  const r2 = await fetch('https://api.cloudflareclient.com/v0a2223/reg', {
+    method: 'POST',
+    headers,
+  });
+  const json2 = await r2.json();
+  const id2 = json2.id;
+  const token2 = json2.token;
+
+  const headersGet = { Authorization: `Bearer ${token}`, ...headers };
+  const headersGet2 = { Authorization: `Bearer ${token2}`, ...headers };
+  const headersPost = {
+    'Content-Type': 'application/json; charset=UTF-8',
+    Authorization: `Bearer ${token}`,
+    ...headers,
+  };
+
+  const patchJson = { referrer: `${id2}` };
+  await fetch(`https://api.cloudflareclient.com/v0a2223/reg/${id}`, {
+    method: 'PATCH',
+    headers: headersPost,
+    body: JSON.stringify(patchJson),
+  });
+
+  await fetch(`https://api.cloudflareclient.com/v0a2223/reg/${id2}`, {
+    method: 'DELETE',
+    headers: headersGet2,
+  });
+
+  const key = keys[Math.floor(Math.random() * keys.length)];
+
+  const putJson1 = { license: `${key}` };
+  await fetch(`https://api.cloudflareclient.com/v0a2223/reg/${id}/account`, {
+    method: 'PUT',
+    headers: headersPost,
+    body: JSON.stringify(putJson1),
+  });
+
+  const putJson2 = { license: `${license}` };
+  await fetch(`https://api.cloudflareclient.com/v0a2223/reg/${id}/account`, {
+    method: 'PUT',
+    headers: headersPost,
+    body: JSON.stringify(putJson2),
+  });
+
+  const r3 = await fetch(`https://api.cloudflareclient.com/v0a2223/reg/${id}/account`, {
+    method: 'GET',
+    headers: headersGet,
+  });
+  const json3 = await r3.json();
+  const updatedLicense = json3.license;
+
+  await fetch(`https://api.cloudflareclient.com/v0a2223/reg/${id}`, {
+    method: 'DELETE',
+    headers: headersGet,
+  });
+
+  return updatedLicense;
+}
+
+export default {
+  async fetch(request, env, ctx) {
+    const key = await getKey();
+
+    // Return a styled HTML page
+    const html = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Chocolatecandyman</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #001f3f; /* Deep navy blue background */
+          height: 100vh;
+          margin: 0;
+          color: white;
+          text-align: center;
+          overflow: hidden;
+          position: relative;
+        }
+        .container {
+          background-color: rgba(0, 0, 0, 0.7);
+          padding: 20px;
+          border-radius: 15px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+          width: 90%;
+          max-width: 600px;
+          position: relative;
+          z-index: 1;
+        }
+        h1 {
+          font-size: 2.5em;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 1.2em;
+          margin: 10px 0;
+        }
+        table {
+          width: 100%;
+          margin: 20px 0;
+          border-collapse: collapse;
+        }
+        table, th, td {
+          border: 1px solid white;
+        }
+        th, td {
+          padding: 10px;
+          text-align: left;
+        }
+        th {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        .button {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 1.2em;
+          color: white;
+          background-color: #f06;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          text-decoration: none;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+          background-color: #e05;
+          transform: scale(1.05);
+        }
+        .donation {
+          margin-top: 20px;
+        }
+        .button:active {
+          transform: scale(0.95);
+        }
+        /* Particle animation */
+        .particles {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          overflow: hidden;
+        }
+        .particle {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.7);
+          animation: particleAnimation 20s linear infinite;
+          pointer-events: none;
+        }
+        @keyframes particleAnimation {
+          0% { transform: translateY(0) rotate(0); }
+          100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="particles">
+        <!-- Create particles -->
+        ${Array.from({ length: 50 }).map(() => `
+          <div class="particle" style="
+            width: ${Math.random() * 5 + 2}px;
+            height: ${Math.random() * 5 + 2}px;
+            top: ${Math.random() * 100}%;
+            left: ${Math.random() * 100}%;
+            animation-duration: ${Math.random() * 10 + 10}s;
+          "></div>
+        `).join('')}
+      </div>
+      <div class="container">
+        <h1>Chocolatecandyman</h1>
+        <p>Validity: Lifetime</p>
+        <p>Device Limit: 5</p>
+        <p>Data Traffic: 24PB</p>
+        <a class="button" href="#" onclick="window.location.reload(); return false;">Generate Key</a>
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>${key}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="donation">
+          <p>Donate to support us:</p>
+          <a class="button" href="https://link.trustwallet.com/send?coin=20000714&address=0xAB789C0211eF3Fc2B91362c6Ffe375A40f87d445" target="_blank">Pay via Trust Wallet</a>
+        </div>
+      </div>
+    </body>
+    </html>
+    `;
+
+    return new Response(html, {
+      headers: { 'Content-Type': 'text/html' },
+    });
+  },
+};
