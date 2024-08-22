@@ -2,10 +2,11 @@
 # 🌟 WARP+ 1 billion GB Key 
 - NOTE : Do not abuse the system by generating more than 2 keys in 1 day and do not try to act smart. I see everything. If you try to flood the system by generating excess keys you will be blacklisted from using this link forever.
   
-
 **Deployed at:** [Chocolatecandyman.warp](https://tvi.la/uongaGd4X
 )
-Note : The url is hosted behind a short link. If you feel any problem accessing it, you can create an issue in the repo section. MOreover, i request you to please visit through this short link everytime you want a key to support this project.
+
+- Note : The url is hosted behind a short link. If you feel any problem accessing it, you can create an issue in the repo section. MOreover, i request you to please visit through this short link everytime you want a key to support this project.
+- 
 ## Show Support for This Project to keep it alive!
 
 <div align="center">
