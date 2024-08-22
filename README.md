@@ -5,7 +5,7 @@
 
 **Deployed at:** [Chocolatecandyman.warp](https://tvi.la/uongaGd4X
 )
-
+Note : The url is hosted behind a short link. If you feel any problem accessing it, you can create an issue in the repo section. MOreover, i request you to please visit through this short link everytime you want a key to support this project.
 ## Show Support for This Project to keep it alive!
 
 <div align="center">
