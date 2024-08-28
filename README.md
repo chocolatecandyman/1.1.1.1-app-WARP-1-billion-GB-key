@@ -1,6 +1,5 @@
 -- There are some changes in cloudflare licensing and API protocols, because of which the key only works in mobile application & not in PC - Will be fixed soon!!! 
 # 🌟 WARP+ 1 BGB/24 PB/1.92 EB Key 
-- NOTE : Do not abuse the system by generating more than 2 keys in 1 day and do not try to act smart. I see everything. If you try to flood the system by generating excess keys you will be blacklisted from using this link forever.
 
 **Deployed at:** [Chocolatecandyman.warp](https://tvi.la/uongaGd4X
 )
