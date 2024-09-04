@@ -1,11 +1,10 @@
 -- There are some changes in cloudflare licensing and API protocols, because of which the key only works in mobile application & not in PC - Will be fixed soon!!! 
+
 # 🌟 WARP+ 1 BGB/24 PB/1.92 EB Key 
 
-**Deployed at:** [Chocolatecandyman.warp](https://tvi.la/uongaGd4X
-)
+**Deployed at:** [Chocolatecandyman.warp](https://warp.chocolatecandyman.workers.dev/)
 
-- Note : The url is hosted behind a short link. If you feel any problem accessing it, you can create an issue in the repo section. MOreover, i request you to please visit through this short link everytime you want a key to support this project.
-  
+
 ## Show Support for This Project to keep it alive!
 
 <div align="center">
