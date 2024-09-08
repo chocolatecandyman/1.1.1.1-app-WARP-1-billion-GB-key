@@ -2,7 +2,7 @@
 
 # 🌟 WARP+ 1 BGB/24 PB/1.92 EB Key 
 
-**Deployed at:** [Chocolatecandyman.warp](https://chocolatecandymangithub.workers.dev/)
+**Deployed at:** [Chocolatecandyman.warp](https://warp.chocolatecandymangithub.workers.dev/)
 
 
 ## Show Support for This Project to keep it alive!
