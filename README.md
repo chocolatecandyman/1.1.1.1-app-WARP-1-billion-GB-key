@@ -1,4 +1,4 @@
--- There are some changes in cloudflare licensing and API protocols, because of which the key only works in mobile application & not in PC - Will be fixed soon!!! 
+---PROJECT HAS BEEN DISCONTINIUED, RAISE AN ISSUE IF YOU WANT ME TO CONTINUE----
 
 # 🌟 WARP+ 1 BGB/24 PB/1.92 EB Key 
 
